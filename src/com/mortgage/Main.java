@@ -11,11 +11,9 @@ public class Main {
         int rows = input.nextInt();
 
         rhombus(rows);
-
     }
 
-    private static void rhombus(int n)
-    {
+    private static void rhombus(int n) {
         int noOfRows = n;
         int midRow = noOfRows / 2;
 
@@ -23,7 +21,7 @@ public class Main {
 
         for (int i = midRow; i > 0; i--) {
             //Printing i spaces at the beginning of each row
-            lineOfChars(columns, midRow+1," ");
+            lineOfChars(columns, midRow + 1, " ");
             lineOfStars(columns);
             System.out.println();
 
@@ -31,10 +29,9 @@ public class Main {
         }
 
 
-
-        for (int i = 0; i <= columns+i; i++) {
+        for (int i = 0; i <= columns + i; i++) {
             //Printing i spaces at the beginning of each row
-            lineOfChars(columns, midRow+1," ");
+            lineOfChars(columns, midRow + 1, " ");
             lineOfStars(columns);
             System.out.println();
 
@@ -43,19 +40,19 @@ public class Main {
         }
     }
 
-    private static void lineOfChars(int numberOfChars,int numberOfRows, String symbol){
+    private static void lineOfChars(int numberOfChars, int numberOfRows, String symbol) {
 
-        for(int i = 0;i < numberOfRows-numberOfChars;i++){
+        for (int i = 0; i < numberOfRows - numberOfChars; i++) {
             System.out.print(symbol);
         }
 
     }
 
-    private static void lineOfStars(int row){
+    private static void lineOfStars(int row) {
         //Return
-        int numberOfStars = row*2-1;
+        int numberOfStars = row * 2 - 1;
 
-        for(int j = 0;j < numberOfStars;j++) {
+        for (int j = 0; j < numberOfStars; j++) {
             System.out.print("*");
         }
 
