@@ -8,21 +8,22 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Enter number of rows: ");
-        int rows = input.nextInt();
+        int noOfRows = input.nextInt();
 
-        rhombus(rows);
+        rhombus(noOfRows);
     }
 
-    private static void rhombus(int n) {
-        int noOfRows = n;
+    private static void rhombus(int noOfRows) {
         int midRow = noOfRows / 2;
 
         int columns = 1;
 
         for (int i = midRow; i > 0; i--) {
             //Printing i spaces at the beginning of each row
-            lineOfChars(columns, midRow + 1, " ");
+            int oddMidrow = midRow + 1;
+            lineOfChars(columns, oddMidrow, " ");
             lineOfStars(columns);
+
             System.out.println();
 
             columns++;
@@ -31,7 +32,8 @@ public class Main {
 
         for (int i = 0; i <= columns + i; i++) {
             //Printing i spaces at the beginning of each row
-            lineOfChars(columns, midRow + 1, " ");
+            int oddMidrow = midRow + 1;
+            lineOfChars(columns, oddMidrow, " ");
             lineOfStars(columns);
             System.out.println();
 
