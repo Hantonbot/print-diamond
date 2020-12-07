@@ -7,75 +7,56 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
         System.out.print("Enter number of rows: ");
-
         int rows = input.nextInt();
 
         rhombus(rows);
 
     }
 
-    public static void rhombus(int n)
+    private static void rhombus(int n)
     {
-
         int noOfRows = n;
+        int midRow = noOfRows / 2;
 
-        int midRow = (noOfRows)/2;
+        int columns = 1;
 
-        //Initializing row with 1
-
-        int row = 1;
-
-        for (int i = midRow; i > 0; i--)
-        {
+        for (int i = midRow; i > 0; i--) {
             //Printing i spaces at the beginning of each row
-
-            lineOfChars(row, midRow+1," ");
-
-            lineOfStars(row);
-
+            lineOfChars(columns, midRow+1," ");
+            lineOfStars(columns);
             System.out.println();
 
-            //Incrementing the row
-
-            row++;
+            columns++;
         }
 
-        //Printing lower half of the diamond
 
-        for (int i = 0; i <= row+i; i++) {
+
+        for (int i = 0; i <= columns+i; i++) {
             //Printing i spaces at the beginning of each row
-
-            lineOfChars(row, midRow+1," ");
-
-            lineOfStars(row);
-
+            lineOfChars(columns, midRow+1," ");
+            lineOfStars(columns);
             System.out.println();
 
-            //Incrementing the row
-
-            row--;
+            columns--;
 
         }
     }
 
-    public static void lineOfChars(int ii,int nn, String symbol){
+    private static void lineOfChars(int numberOfChars,int numberOfRows, String symbol){
 
-        for(int j=1;j<=nn-ii;j++){
-
-            System.out.print(" ");
-
+        for(int i = 0;i < numberOfRows-numberOfChars;i++){
+            System.out.print(symbol);
         }
 
     }
 
-    public static void lineOfStars(int numberOfStarsToPrint){
+    private static void lineOfStars(int row){
+        //Return
+        int numberOfStars = row*2-1;
 
-        for(int k=1;k<= numberOfStarsToPrint*2-1;k++) {
-
+        for(int j = 0;j < numberOfStars;j++) {
             System.out.print("*");
-
         }
 
     }
